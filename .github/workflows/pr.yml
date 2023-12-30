@@ -12,14 +12,14 @@ jobs:
           # We need to fetch all commits to list what ebuilds are added/created/modified/renamed.
           fetch-depth: 0
 
-      - name: List added/created/modified/renamed ebuilds
-        run: git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} | grep -E '\.ebuild$' | xargs dirname | sort -u > ebuilds.txt
-
       - name: Build Gentoo Docker image
         run: docker build -t emerge .
 
-        # We do not build all packages at once to check if individual ebuilds
-        # are well-written.
+      - name: List added/created/modified/renamed ebuilds
+        run: git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} | grep -E '\.ebuild$' | xargs dirname | sort -u > ebuilds.txt
+
+        # We build packages one by one to check if individual ebuilds are
+        # well-written.
       - name: Build one package by one
         run: |
           while read -r package; do
