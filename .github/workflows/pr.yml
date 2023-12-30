@@ -11,7 +11,7 @@ jobs:
 
       - name: List added/created/modified/renamed ebuilds
         run: |
-          git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.head.sha }} 
+          git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} 
           git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} | grep -E '\.ebuild$' | xargs dirname | sort -u > ebuilds.txt
 
       - name: Build Gentoo Docker image
