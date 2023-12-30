@@ -16,7 +16,8 @@ jobs:
       - name: Build Gentoo Docker image
         run: docker build -t emerge .
 
-        # We do not build all packages at once to check if individual ebuilds are well-written.
+        # We do not build all packages at once to check if individual ebuilds
+        # are well-written.
       - name: Build one package by one
         run: |
           while read -r package; do
