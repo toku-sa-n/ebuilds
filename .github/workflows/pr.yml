@@ -1,0 +1,23 @@
+name: PR Checks
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: List added/created/modified/renamed ebuilds
+        run: |
+          git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} | grep -E '\.ebuild$' | xargs dirname | sort -u > ebuilds.txt
+
+      - name: Build Gentoo Docker image
+        run: docker build -t emerge .
+
+      - name: Build one package by one
+        run: |
+          while read -r package; do
+            docker run --rm emerge $package
+          done < ebuilds.txt
