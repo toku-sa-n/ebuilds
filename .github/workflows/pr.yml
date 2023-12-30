@@ -7,13 +7,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.0.0
+        with:
+          # We need to fetch all commits to list what ebuilds are added/created/modified/renamed.
+          fetch-depth: 0
 
       - name: List added/created/modified/renamed ebuilds
-        run: |
-          git branch
-          exit 1
-          git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} | grep -E '\.ebuild$' | xargs dirname | sort -u > ebuilds.txt
+        run: git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} | grep -E '\.ebuild$' | xargs dirname | sort -u > ebuilds.txt
 
       - name: Build Gentoo Docker image
         run: docker build -t emerge .
