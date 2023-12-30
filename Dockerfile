@@ -7,6 +7,4 @@ RUN eselect repository create toku-sa-n
 
 COPY . /var/db/repos/toku-sa-n
 
-RUN ls -l /var/db/repos/toku-sa-n
-
 ENTRYPOINT [ "emerge" ]

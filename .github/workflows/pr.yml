@@ -1,0 +1,27 @@
+name: PR Checks
+
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.0.0
+        with:
+          # We need to fetch all commits to list what ebuilds are added/created/modified/renamed.
+          fetch-depth: 0
+
+      - name: Build Gentoo Docker image
+        run: docker build -t emerge .
+
+      - name: List added/created/modified/renamed ebuilds
+        run: git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} | grep -E '\.ebuild$' | xargs dirname | sort -u > ebuilds.txt
+
+        # We build packages one by one to check if individual ebuilds are
+        # well-written.
+      - name: Build one package by one
+        run: |
+          while read -r package; do
+            docker run --rm emerge $package
+          done < ebuilds.txt
