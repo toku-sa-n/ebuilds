@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SHARE_PATH="/usr/share/lua-language-server"
+STATE_PATH="$HOME/.local/state/lua-language-server"
+
+exec $SHARE_PATH/bin/lua-language-server \
+  -E $SHARE_PATH/main.lua \
+  --logpath="$STATE_PATH/log" \
+  --metapath="$STATE_PATH/meta" \
+  "$@"
