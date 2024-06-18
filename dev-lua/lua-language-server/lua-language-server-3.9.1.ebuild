@@ -7,7 +7,7 @@ DESCRIPTION="A language server that offers Lua language support - programmed in 
 HOMEPAGE="https://github.com/LuaLS/lua-language-server"
 
 EGIT_REPO_URI="https://github.com/LuaLS/lua-language-server.git"
-EGIT_COMMIT="3.9.1"
+EGIT_COMMIT="${PV}"
 
 RDEPEND="
 	dev-lang/lua
