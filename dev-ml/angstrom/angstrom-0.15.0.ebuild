@@ -17,6 +17,7 @@ KEYWORDS="~amd64"
 IUSE="+ocamlopt test"
 
 RDEPEND="
+	dev-ml/async:=
 	dev-ml/bigstringaf:=
 	dev-ml/result:=
 	dev-ml/ppx_let:=
