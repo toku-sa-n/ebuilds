@@ -13,7 +13,7 @@ SRC_URI="https://github.com/ejgallego/coq-serapi/archive/${COQ_VERSION}+${PV}.ta
 
 S="${WORKDIR}/${PN}-${COQ_VERSION}-${PV}"
 
-LICENSE="LGPL-2.1"
+LICENSE="LGPL-2.1-or-later"
 
 SLOT="0"
 
