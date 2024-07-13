@@ -25,7 +25,7 @@ RDEPEND="
 
 	dev-ml/cmdliner:=
 	dev-ml/yojson:=
-	dev-ml/url:=
+	dev-ml/uri:=
 	dev-ml/dune-build-info:=
 
 	dev-ml/menhir:=
