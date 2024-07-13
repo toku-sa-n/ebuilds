@@ -21,9 +21,9 @@ KEYWORDS="~amd64"
 IUSE="+ocamlopt test"
 
 RDEPEND="
-	dev-ml/core_bench:=
+	dev-ml/angstrom:=
+	dev-ml/ppx_sexp_conv:=
 	dev-ml/stringext:=
-	dev-ml/re:=
 "
 
 DEPEND="
