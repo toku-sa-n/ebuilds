@@ -40,7 +40,7 @@ DEPEND="
 "
 
 BEPEND="
-	test? ( dev-ml/alcotest )
+	test? (
+		dev-ml/alcotest:=
+	)
 "
-
-DOCS=(CODE_OF_CONDUCT.md CONTRIBUTING.md README.md)
