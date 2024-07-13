@@ -40,6 +40,3 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 "
-
-BEPEND="
-"
