@@ -14,7 +14,7 @@ LICENSE="BSD"
 SLOT="0/${PV}"
 
 KEYWORDS="~amd64"
-IUSE="+ocamlopt"
+IUSE="+ocamlopt test"
 
 RDEPEND="
 	dev-ml/async:=
@@ -24,4 +24,8 @@ RDEPEND="
 
 DEPEND="
 	${RDEPEND}
+"
+
+BDEPEND="
+	test? ( dev-ml/alcotest:= )
 "
