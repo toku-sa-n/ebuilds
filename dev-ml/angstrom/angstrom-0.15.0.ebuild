@@ -27,5 +27,7 @@ DEPEND="
 "
 
 BDEPEND="
-	test? ( dev-ml/alcotest:= )
+	test? (
+		dev-ml/alcotest:=
+	)
 "
