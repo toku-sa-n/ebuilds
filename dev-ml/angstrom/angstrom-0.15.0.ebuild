@@ -9,7 +9,7 @@ DESCRIPTION="Parser combinators built for speed and memory efficiency"
 HOMEPAGE="https://github.com/inhabitedtype/angstrom"
 SRC_URI="https://github.com/inhabitedtype/angstrom/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="BSD3"
+LICENSE="BSD"
 
 SLOT="0/${PV}"
 
