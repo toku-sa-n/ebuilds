@@ -24,7 +24,7 @@ RDEPEND="
 	=sci-mathematics/coq-${COQ_VERSION}:=
 
 	dev-ml/cmdliner:=
-	dev-ml/ocamlfind:=
+	dev-ml/findlib:=
 	dev-ml/sexplib:=
 
 	dev-ml/ppx_import:=
