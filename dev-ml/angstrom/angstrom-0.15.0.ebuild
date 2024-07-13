@@ -22,6 +22,7 @@ RDEPEND="
 	dev-ml/result:=
 	dev-ml/ppx_let:=
 	dev-ml/ocaml-syntax-shims:=
+	dev-ml/lwt:=
 "
 
 DEPEND="
