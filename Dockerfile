@@ -1,7 +1,8 @@
-FROM gentoo/stage3:amd64-openrc-20240708
+FROM gentoo/stage3:amd64-openrc
 
-RUN emerge-webrsync
+RUN emerge-webrsync     \
+        && emerge dev-util/pkgcheck app-eselect/eselect-repository      \
+        && eselect repository create toku-sa-n      \
+        && cp /usr/share/portage/config/repos.conf /etc/portage/repos.conf/gentoo.conf
 
-COPY . /var/db/repos/local/
-
-CMD ["/bin/bash"]
+COPY . /var/db/repos/toku-sa-n/
