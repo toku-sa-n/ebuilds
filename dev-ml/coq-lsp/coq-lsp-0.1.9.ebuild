@@ -22,6 +22,7 @@ IUSE="+ocamlopt test"
 
 RDEPEND="
 	=sci-mathematics/coq-${COQ_VERSION}.0:=
+	sci-mathematics/coq-serapi:=
 
 	dev-ml/cmdliner:=
 	dev-ml/yojson:=
@@ -31,8 +32,6 @@ RDEPEND="
 	dev-ml/menhir:=
 
 	dev-ml/ppx_inline_test:=
-
-	dev-ml/coq-serapi:=
 "
 
 DEPEND="
