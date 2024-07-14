@@ -24,6 +24,7 @@ RDEPEND="
 	dev-ml/angstrom:=
 	dev-ml/ppx_sexp_conv:=
 	dev-ml/stringext:=
+	dev-ml/core_bench:=
 "
 
 DEPEND="
@@ -34,6 +35,5 @@ BDEPEND="
 	test? (
 		dev-ml/ounit2:=
 		dev-ml/crowbar:=
-		dev-ml/core_bench:=
 	)
 "
