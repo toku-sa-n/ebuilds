@@ -35,5 +35,6 @@ BDEPEND="
 	test? (
 		dev-ml/ounit2:=
 		dev-ml/crowbar:=
+		dev-ml/core_bench:=
 	)
 "
