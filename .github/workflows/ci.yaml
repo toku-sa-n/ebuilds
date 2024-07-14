@@ -16,7 +16,7 @@ jobs:
       - name: Build the container
         run: sudo docker build -t checker .
 
-      - name: Run `pkgcheck`
+      - name: Run `pkgcheck scan`
         run: sudo docker run checker pkgcheck scan --repo toku-sa-n --exit info
 
   prettier:
