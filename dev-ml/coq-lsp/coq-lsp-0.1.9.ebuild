@@ -5,13 +5,14 @@ EAPI=8
 
 inherit dune
 
-COQ_VERSION="8.19"
+COQ_MIN_V=8.19
+COQ_MAX_V=8.20
 
 DESCRIPTION="Visual Studio Code Extension and Language Server Protocol for Coq"
 HOMEPAGE="https://github.com/ejgallego/coq-lsp"
-SRC_URI="https://github.com/ejgallego/coq-lsp/archive/${PV}+${COQ_VERSION}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/ejgallego/coq-lsp/archive/${PV}+${COQ_MIN_V}.tar.gz -> ${P}.tar.gz"
 
-S="${WORKDIR}/${P}-${COQ_VERSION}"
+S="${WORKDIR}/${P}-${COQ_MIN_V}"
 
 LICENSE="LGPL-2.1"
 
@@ -21,7 +22,7 @@ KEYWORDS="~amd64"
 IUSE="+ocamlopt test"
 
 RDEPEND="
-	=sci-mathematics/coq-${COQ_VERSION}.0:=
+	>=sci-mathematics/coq-${COQ_MIN_V}.0:= <sci-mathematics/coq-${COQ_MAX_V}.0:=
 	sci-mathematics/coq-serapi:=
 
 	dev-ml/cmdliner:=
