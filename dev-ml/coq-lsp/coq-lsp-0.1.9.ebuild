@@ -21,6 +21,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+ocamlopt test"
 
+RESTRICT="!test? ( test )"
+
 RDEPEND="
 	>=sci-mathematics/coq-${COQ_MIN_V}.0:= <sci-mathematics/coq-${COQ_MAX_V}.0:=
 	sci-mathematics/coq-serapi:=
