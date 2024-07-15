@@ -20,6 +20,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+ocamlopt test"
 
+RESTRICT="!test? ( test )"
+
 RDEPEND="
 	=sci-mathematics/coq-${COQ_VERSION}.0:=
 	sci-mathematics/coq-serapi:=
