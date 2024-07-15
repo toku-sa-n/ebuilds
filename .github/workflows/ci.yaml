@@ -17,7 +17,7 @@ jobs:
         run: sudo docker build -t checker .
 
       - name: Run `pkgcheck scan`
-        run: sudo docker run -t checker pkgcheck scan --repo toku-sa-n --exit info
+        run: sudo docker run -t checker pkgcheck scan --jobs $(nproc) --repo toku-sa-n --exit info
 
         # Run `emerge` with the ebuilds that have been changed
         # First `grep` filters the ebuilds that have been added, copied, modified, or renamed
