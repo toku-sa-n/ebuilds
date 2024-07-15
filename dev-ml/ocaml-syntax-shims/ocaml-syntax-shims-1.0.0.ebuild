@@ -15,3 +15,5 @@ SLOT="0/${PV}"
 
 KEYWORDS="~amd64"
 IUSE="+ocamlopt test"
+
+RESTRICT="!test? ( test )"
