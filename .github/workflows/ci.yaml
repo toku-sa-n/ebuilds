@@ -17,7 +17,7 @@ jobs:
         run: sudo docker build -t checker .
 
       - name: Run `pkgcheck scan`
-        run: sudo docker run checker pkgcheck scan --repo toku-sa-n --exit info
+        run: sudo docker run -t checker pkgcheck scan --repo toku-sa-n --exit info
 
   prettier:
     runs-on: ubuntu-latest
