@@ -37,7 +37,7 @@ src_compile() {
 }
 
 src_install() {
-	dobin ${FILESDIR}/lua-language-server || die
+	dobin "${FILESDIR}/lua-language-server" || die
 
 	insinto /usr/share/${PN}
 	for file in bin locale meta script debugger.lua main.lua; do
