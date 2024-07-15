@@ -3,7 +3,7 @@
 <pkgmetadata>
   <maintainer type="person">
     <email>tokusan441@gmail.com</email>
-    <description>Hiroki Tokunaga</description>
+    <name>Hiroki Tokunaga</name>
   </maintainer>
   <upstream>
     <remote-id type="github">moustacheful/glimmer</remote-id>
