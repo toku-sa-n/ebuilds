@@ -16,6 +16,8 @@ SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="+ocamlopt test"
 
+RESTRICT="!test? ( test )"
+
 RDEPEND="
 	dev-ml/async:=
 	dev-ml/bigstringaf:=
