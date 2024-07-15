@@ -170,7 +170,7 @@ LICENSE="
 	MIT
 	BSD
 	Unicode-DFS-2016
-	|| ( Apache-2.0 BSL-1.0 )
+	|| ( Apache-2.0 Boost-1.0 )
 "
 SLOT="0"
 KEYWORDS="~amd64"
