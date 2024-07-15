@@ -19,6 +19,12 @@ jobs:
       - name: Run `pkgcheck scan`
         run: sudo docker run -t checker pkgcheck scan --repo toku-sa-n --exit info
 
+      - name: Emerge
+        run: git diff main --name-only --diff-filter=ACMR \
+          | grep '^[^/]\+/[^/]\+/.+ebuild$'
+          | sed -r 's/^(.[^/]+)\/.[^/]+\/(.[^/]+)\/.ebuild$/\1\/\2/g'
+          | xargs -n1 sudo docker run -t checker emerge --oneshot --verbose --tree --quiet
+
   prettier:
     runs-on: ubuntu-latest
 
