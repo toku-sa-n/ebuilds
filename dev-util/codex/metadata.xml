@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>tokusan441@gmail.com</email>
+    <name>Hiroki Tokunaga</name>
+  </maintainer>
+  <use>
+    <flag name="wayland">Enable clipboard integration via arboard's wayland-data-control backend.</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">openai/codex</remote-id>
+  </upstream>
+</pkgmetadata>
